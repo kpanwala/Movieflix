@@ -1,219 +1,462 @@
 * {
-    box-sizing: border-box;
-  }
+  box-sizing: border-box;
+  margin:0;
+}
 
-  #header {
-    background: black;
-    color: white;
-    padding-left: 25px;
-    padding-right: 25px;
-  }
+#videoSection {
+  width: 100%;
+  background: black;
+  overflow: auto;
+  white-space:unset;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
 
-  #header a {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+#videoSection1 {
+  width: 100%;
+  background: black;
+  overflow: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+#videoSection1::-webkit-scrollbar 
+{ 
+	width: 0 !important;
+}
+
+#videoSection::-webkit-scrollbar 
+{ 
+	width: 0 !important;
+}
+
+.videoBoxes {
+  display: inline-flex;
+  width: 300px;
+  min-height: 150px;
+  font-size: 1em;
+  cursor:pointer;
+  text-decoration: none;
+  font-family: helvetica;
+  font-weight: 100;
+  margin: 2.5px;
+  color:white;
+  padding: 5px;
+  background: linear-gradient(
+      rgba(255, 0, 0, 0.45), 
+      rgba(255, 0, 0, 0.45)
+    )
+}
+
+.video {
+  background: -webkit-linear-gradient(
+      45deg,
+      rgba(231, 31, 17, 0.5) 0%,
+      #000000 100%
+    ),
+    url(http://www.togomeetings.com/wp-content/uploads/2017/07/elegant-panoramic-movie-posters-and-cool-ideas-of-movie-poster-horizontal-13.jpg)
+      no-repeat left center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.videoBoxes p {
+  font-family: helvetica;
+  font-weight: 100;
+  margin: 0;
+  padding: 1vw;
+  font-size: 1em;
+  text-decoration: none;
+  color: white; 
+}
+
+.video1 {
+  background: -webkit-linear-gradient(
+      45deg,
+      rgba(231, 31, 17, 0.5) 0%,
+      #000000 100%
+    ),
+    url(http://www.togomeetings.com/wp-content/uploads/2017/07/elegant-panoramic-movie-posters-and-cool-ideas-of-movie-poster-horizontal-13.jpg)
+      no-repeat left center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+
+
+/* .scrollmenu p {
+  display: inline-block;
+  color: white;
+  padding: 14px;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 1em;
+
+}
+
+
+.scrollmenu1 {
+  background-color: #333;
+  overflow: auto;
+  white-space: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.scrollmenu1::-webkit-scrollbar 
+{ 
+	width: 0 !important;
+}
+
+.scrollmenu1 p {
+  display: inline-block;
+  color: white;
+  padding: 14px;
+  text-decoration: none;
+  vertical-align: middle;
+  font-size: 1em;
+
+} */
+
+/* div.scrollmenu a:hover {
+  background-color: #777;
+} */
+
+#header {
+  background: black;
+  color: white;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+#header a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-decoration: none;
+}
+
+#header a:hover {
+  color: red;
+}
+
+.logo {
+  float: left;
+  display: inline-block;
+  background: red;
+  padding: 20px;
+  margin-right: 25px;
+}
+
+.leftMenu {
+  float: left;
+  display: inline-block;
+}
+
+.leftMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.leftMenu ul li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.leftMenu ul li a {
+  color: white;
+}
+
+.leftMenu ul li a.dropdown {
+  color: red;
+}
+
+.leftMenu ul li .dropdown {
+  color: red;
+}
+
+.rightMenu {
+  float: right;
+  display: inline-block;
+  color: black;
+}
+
+.rightMenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.rightMenu ul li {
+  display: inline-block;
+  padding: 20px;
+}
+
+.rightMenu ul li a {
+  color: white;
+}
+
+#largeImage {
+  padding: 200px 25px;
+  background: -webkit-linear-gradient(
+      270deg,
+      rgba(231, 31, 17, 0.7) 0%,
+      #000000 100%
+    ),
+    url(http://www.togomeetings.com/wp-content/uploads/2017/07/elegant-panoramic-movie-posters-and-cool-ideas-of-movie-poster-horizontal-13.jpg)
+    no-repeat left center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  /* background-size: cover; */
+}
+
+.description-box {
+  width: 50%;
+}
+
+.description-box h1 {
+  font-family: serif;
+  font-weight: 700;
+  font-size: 60px;
+  margin: 0;
+  color: white;
+}
+
+.description-box h3 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 4;
+  font-size: 25px;
+  margin: 0;
+  color: white;
+}
+
+.description-box h4 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  margin: 0px;
+  color: white;
+}
+
+.description-box p {
+  margin-top: 25px !important;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  margin: 0px;
+  color: white;
+}
+
+.button1 {
+  margin-top: 25px !important;
+  display: inline-block;
+  padding: 12px 20px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button2 {
+  margin-top: 25px !important;
+  display: inline-block;
+  padding: 10px 18px;
+  border: 2px solid #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.button1:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.button2:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid rgba(0, 0, 0, 0.6);
+}
+
+
+input[type=text], input[type=password] {
+  width: 50%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 1.2em;
+}
+
+/* Set a style for all buttons */
+input[type=submit] {
+  align-self: center;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px;
+  margin-left:2%;
+  border: none;
+  cursor: pointer;
+  width: 20%;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {  
+  padding-top:16px;
+  padding-bottom:16px;
+  padding-right:20px;
+  padding-left:30px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+li > ul{
+  cursor: pointer;
+}
+
+li > a{
+  cursor: pointer;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */ 
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {  
+  width:50vw;
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  color:red;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background:black;
+  min-width: 110px;
+  cursor: pointer;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  background:black;
+  padding:10px;
+  width:20px;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+
+
+/* For Mobile screens */
+
+@media only screen and (max-width: 600px) {
+  .videoBoxes {
+    width: 95%;
+    margin: 2.5%;
     text-decoration: none;
   }
-
-  #header a:hover {
-    color: red;
-  }
-
-  .logo {
-    float: left;
-    display: inline-block;
-    background: red;
-    padding: 20px;
-    margin-right: 25px;
-  }
-
-  .leftMenu {
-    float: left;
-    display: inline-block;
-  }
-
-  .leftMenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .leftMenu ul li {
-    display: inline-block;
-    padding: 20px;
-  }
-
-  .leftMenu ul li a {
-    color: white;
-  }
-
-  .leftMenu ul li a.dropdown {
-    color: red;
-  }
-
-  .rightMenu {
-    float: right;
-    display: inline-block;
-    color: black;
-  }
-
-  .rightMenu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .rightMenu ul li {
-    display: inline-block;
-    padding: 20px;
-  }
-
-  .rightMenu ul li a {
-    color: white;
-  }
-
-  #largeImage {
-    padding: 200px 25px;
-    background: -webkit-linear-gradient(
-        45deg,
-        rgba(231, 31, 17, 0.7) 0%,
-        #000000 100%
-      ),
-      url(http://www.togomeetings.com/wp-content/uploads/2017/07/elegant-panoramic-movie-posters-and-cool-ideas-of-movie-poster-horizontal-13.jpg)
-      no-repeat left center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    /* background-size: cover; */
-  }
-
-  .description-box {
-    width: 50%;
-  }
-
-  .description-box h1 {
-    font-family: serif;
-    font-weight: 700;
-    font-size: 60px;
-    margin: 0;
-    color: white;
-  }
-
-  .description-box h3 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 4;
-    font-size: 25px;
-    margin: 0;
-    color: white;
-  }
-
-  .description-box h4 {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    margin: 0px;
-    color: white;
-  }
-
-  .description-box p {
-    margin-top: 25px !important;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: 100;
-    font-size: 18px;
-    margin: 0px;
-    color: white;
-  }
-
-  .button1 {
-    margin-top: 25px !important;
-    display: inline-block;
-    padding: 12px 20px;
-    background: #000;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .button2 {
-    margin-top: 25px !important;
-    display: inline-block;
-    padding: 10px 18px;
-    border: 2px solid #000;
-    color: #fff;
-    cursor: pointer;
-  }
-
-  .button1:hover {
-    background: rgba(0, 0, 0, 0.6);
-  }
-
-  .button2:hover {
-    background: rgba(0, 0, 0, 0.6);
-    border: 2px solid rgba(0, 0, 0, 0.6);
-  }
-
-  #videoSection {
-    width: 100%;
-    background: black;
-  }
-
-  .row {
-    font-size: 0;
-    width: 100%;
-  }
-
-  .videoBoxes {
-    display: inline-block;
-    background: red;
-    width: 300px;
-    min-height: 150px;
-    font-size: 16px;
-    margin: 2.5px;
-    padding: 15px;
-  }
-
-  .videoBoxes h4 {
+  .videoBoxes a {
+    text-decoration: none;
     font-family: helvetica;
     font-weight: 100;
-    margin: 0;
-    padding: 0;
-    font-size: 30px;
-    color: white;
+    font-size: 40px;
   }
-
   .videoBoxes p {
-    display: none;
+    display: block;
+    font-family: helvetica;
+    font-weight: 300;
+    font-size: 20px;
+    color: #fff;
   }
-
-  .video1 {
-    background: -webkit-linear-gradient(
-        45deg,
-        rgba(231, 31, 17, 0.5) 0%,
-        #000000 100%
-      ),
-      url(http://www.togomeetings.com/wp-content/uploads/2017/07/elegant-panoramic-movie-posters-and-cool-ideas-of-movie-poster-horizontal-13.jpg)
-        no-repeat left center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-
-
-  /* For Mobile screens */
-
-  @media only screen and (max-width: 600px) {
-    .videoBoxes {
-      width: 95%;
-      margin: 2.5%;
-    }
-    .videoBoxes h4 {
-      font-family: helvetica;
-      font-weight: 100;
-      font-size: 40px;
-    }
-    .videoBoxes p {
-      display: block;
-      font-family: helvetica;
-      font-weight: 300;
-      font-size: 20px;
-      color: #fff;
-    }
-  }
+}

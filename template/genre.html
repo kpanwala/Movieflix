@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Genre {{l2}}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+
+      <div id="header">
+            <div class="logo">Moviezflix</div>
+            <div class="leftMenu">
+            <ul>
+                <li>
+                <a href="Browse.html" class="dropdown">Browse</a>
+                </li>
+            </ul>
+            </div>
+            <div class="rightMenu">
+            <ul>
+                <li>
+                <a href="Search.html">Search</a>
+                </li>
+                <li class="dropdown" style="color:white;">
+                    <ul>{{l}}<i class='fas fa-angle-down' style='font-size:24px; margin-top:5px;'></i></ul>                    
+                    <ul id="logout" class="dropdown-content">Log Out</ul>
+                </li>
+            </ul>
+            </div>
+      </div>        
+
+       
+          
+        
+        <div id="largeImage">
+            <div class="description-box">
+            <h4> Moviezflix Presents</h4>
+            {% for e in l1[0:1] %}
+            <h1> {{e[0]}}</h1>
+            <p> 
+                {{e[1]}} !
+            </p>
+            {% endfor %}
+            <div class="button1"> Watch</div>   
+            </div>
+        </div>        
+        
+        <div style="color:white; font-size:2em; padding:2vw; background:black;">Genre Based <i class='fas fa-angle-right' style='font-size:36px'></i> <span style="font-size:30px; color:white;">{{l2}}</span></div>
+        <div class="scrollmenu" id="videoSection">
+        {% for e in l1[1:] %}
+            <div class="videoBoxes video">
+                <h4>{{e[0]}}</h4>
+            </div>
+        {% endfor %} 
+        </div>    
+	
+
+</body>
+
+<script>
+    document.getElementById("logout").onclick = function() {
+        if(confirm("Do you want to LOG OUT ?")){
+            window.open("http://127.0.0.1:5000/index1.html","_self");
+        }        
+    }
+</script>
+</html>

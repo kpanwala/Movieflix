@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Home</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
+
       <div id="header">
             <div class="logo">Moviezflix</div>
             <div class="leftMenu">
@@ -14,37 +15,130 @@
                 </li>
             </ul>
             </div>
-            <div class="rightMenu"> right menu
+            <div class="rightMenu">
             <ul>
                 <li>
                 <a href="Search.html">Search</a>
                 </li>
+                <li>
+                    <a onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</a>
+                </li>
             </ul>
             </div>
-        </div>
+        </div>        
+
+        <div id="id01" class="modal">
+  
+            <form class="modal-content animate" method="post" action='/login'>
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>   
+                <h2>Welcome to Moviezflix ! </h2>
+              </div>
+          
+              <div class="container">
+                <label for="username"><b>Username:</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required><br>
+          
+                <label for="password"><b>Password: </b></label>
+                <input type="password" placeholder="Enter Password" name="password" required><br>
+                                  
+                <br>
+              </div>
+          
+              <div class="container" style="background-color:#f1f1f1">
+                <input type="submit" style="align-text:center ;" id="submit" name="submit" value="Login">  
+              </div>
+            </form>
+          </div>
+          
+        
         <div id="largeImage">
             <div class="description-box">
             <h4> Moviezflix Presents</h4>
-            <h1> BATMAN RETURNS AGAIN!</h1>
-            <h3> </h3>
-            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed dictum iaculis dolor, et mollis metus rutrum vel. Proin id massa eget lorem hendrerit efficitur. Maecenas venenatis eros ut rhoncus pretium. </p>
+            {% for e in l1[0:1] %}
+            <h1> {{e[0]}}</h1>
+            <p> {{e[1]}} !</p>
+            {% endfor %}
             <div class="button1"> Watch</div>   
             </div>
-        </div>
-            
-        <div class="results" id="videoSection">
-            <h1 style="font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; text-decoration: none; color:white; font-size:2em; padding-left:5vw; padding-top:4vh; margin-top:-10vh;">Recommended movies </h1>
-            {% for e in l %}
-            <div class="row">
-                <div class="videoBoxes video1">
-                    <h4> {{e}}</h4>
-                    <p> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
-                </div>
+        </div>        
+        
+        <div style="color:white; font-size:2em; padding:2vw; background:black;">Recommended movies</div>
+        <div id="videoSection">
+        {% for e in l1[1:] %}
+            <div class="videoBoxes video">
+                <h4>{{e[0]}}</h4>
             </div>
-            {% endfor %}
+        {% endfor %} 
         </div>
+
+        <div style="color:white; font-size:2em; padding:2vw;  background-color: black;">Genre based</div>
+        <div id="videoSection1">
+                <div class="videoBoxes video">
+                    <h3>Thriller</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Drama</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Comedy</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Romance</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Action</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Horror</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Science Fiction</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Adventure</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Mystery</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Fantasy</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>Animation</h3>
+                </div>
+                
+                <div class="videoBoxes video">
+                    <h3>Tv Series</h3>
+                </div>
+
+                <div class="videoBoxes video">
+                    <h3>History</h3>
+                </div>            
+        </div>
+        
       </div>
 	
 
 </body>
+
+<script>
+    var modal = document.getElementById('id01');
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
 </html>

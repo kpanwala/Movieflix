@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+      <div id="header">
+            <div class="logo">Moviezflix</div>
+            <div class="leftMenu">
+            <ul>
+                <li>
+                <a href="Browse.html" class="dropdown">Browse</a>
+                </li>
+            </ul>
+            </div>
+            <div class="rightMenu">
+            <ul>
+                <li>
+                <a href="Search.html">Search</a>
+                </li>
+                <li class="dropdown" style="color:white;">
+                    <ul>{{l}}<i class='fas fa-angle-down' style='font-size:24px; margin-top:5px;'></i></ul>                    
+                    <ul id="logout" class="dropdown-content">Log Out</ul>
+                </li>
+
+            </ul>
+            </div>
+        </div>                
+        
+        <div id="largeImage">
+            <div class="description-box">
+            <h4> Moviezflix Presents</h4>
+            {% for e in l1[0:1] %}
+            <h1> {{e[0]}}</h1>
+            <p> {{e[1]}} !</p>
+            {% endfor %} 
+            <div class="button1"> Watch</div>   
+            </div>
+        </div>        
+        
+        <div style="color:white; font-size:2em; padding:2vw; background:black;">Recommended movies</div>
+        <div class="scrollmenu" id="videoSection">
+        {% for e in l2[1:] %}
+            <div class="videoBoxes video">
+                <p>{{e[0]}}</p>
+            </div>
+        {% endfor %} 
+        </div>
+
+        <div style="color:white; font-size:2em; padding:2vw; background:black;">Because you have watched {{l3}}</div>
+        <div id="videoSection">
+        {% for e in l1[1:] %}
+            <div class="videoBoxes video">
+                <p>{{e[0]}}</p>
+            </div>
+        {% endfor %} 
+        </div>
+
+        <div style="color:white; font-size:2em; padding:2vw;  background-color: black;">Genre based</div>
+        <div id="videoSection1">
+                <div class="videoBoxes video vid">
+                    <h3>Thriller</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Drama</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Comedy</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Romance</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Action</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Horror</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Science Fiction</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Adventure</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Mystery</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Fantasy</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>Animation</h3>
+                </div>
+                
+                <div class="videoBoxes video vid">
+                    <h3>Tv Series</h3>
+                </div>
+
+                <div class="videoBoxes video vid">
+                    <h3>History</h3>
+                </div>            
+        </div>
+        
+      </div>
+	
+
+</body>
+
+<script>
+    var modal = document.getElementById('id01');
+    var vid = document.getElementsByClassName('vid');
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    document.getElementById("logout").onclick = function() {
+        if(confirm("Do you want to LOG OUT ?")){
+            window.open("index.html","_self");
+        }        
+    }
+
+    vid[0].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/thriller';
+    }
+    
+    vid[1].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/drama';
+    }
+
+    vid[2].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/comedy';
+    }
+
+    vid[3].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/romance';
+    }
+
+    vid[4].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/action';
+    }
+
+    vid[5].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/horror';
+    }
+
+    vid[6].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/science fiction';
+    }
+
+    vid[7].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/adventure';
+    }
+
+    vid[8].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/mystery';
+    }
+
+    vid[9].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/fantasy';
+    }
+
+    vid[10].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/animation';
+    }
+
+    vid[11].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/tv series';
+    }
+
+    vid[12].onclick= function(){
+        window.location = 'http://127.0.0.1:5000/genre/history';
+    }
+</script>
+</html>
